@@ -1,0 +1,30 @@
+# Virtual environment - never commit this
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# VS Code artifacts
+tempCodeRunnerFile.py
+.vscode/
+
+# Secrets
+.env
+*.env
+
+# macOS junk
+.DS_Store
+
+# Database files
+*.db
+
+# Large model/image files (we'll handle separately)
+*.pkl
+*.dat
+
+# Attendance data (sensitive)
+Attendance.csv
+Absent_Students.csv
