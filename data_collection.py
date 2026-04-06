@@ -1,10 +1,3 @@
-# data_collection.py
-# ─────────────────────────────────────────────────────────────
-# Captures training images for a student using webcam.
-# MediaPipe detects faces — only clean, sharp, centered,
-# well-lit images are saved. Quality over quantity.
-# ─────────────────────────────────────────────────────────────
-
 import cv2
 import mediapipe as mp
 import numpy as np
@@ -60,9 +53,6 @@ def _extract_crop(frame: np.ndarray,
     if x2 <= x1 or y2 <= y1:
         return None, None
     return frame[y1:y2, x1:x2].copy(), (x1, y1, x2, y2)
-
-
-# ── Main Collection Function ──────────────────────────────────
 
 def collect_images(student_id: str,
                    name: str,
@@ -189,17 +179,14 @@ def collect_images(student_id: str,
             else:
                 rejected["no_face"] += 1
 
-            # ── Overlays ──────────────────────────────────────
             draw_status_bar(display, status_msg, status_color)
 
-            # Progress bar
             prog = int((saved / count) * w)
             cv2.rectangle(display, (0, h - 8),
                           (w, h), (40, 40, 40), cv2.FILLED)
             cv2.rectangle(display, (0, h - 8),
                           (prog, h), (0, 200, 0), cv2.FILLED)
-
-            # Hint
+            
             if saved < len(hints):
                 cv2.putText(display,
                             f"Hint: {hints[saved]}",
@@ -207,7 +194,6 @@ def collect_images(student_id: str,
                             cv2.FONT_HERSHEY_SIMPLEX,
                             0.52, (255, 220, 0), 1)
 
-            # Counter top-right
             cv2.putText(display,
                         f"{saved}/{count}",
                         (w - 90, 28),
@@ -217,7 +203,6 @@ def collect_images(student_id: str,
             cv2.imshow(f"Capture — {name}", display)
             key = cv2.waitKey(1) & 0xFF
 
-            # Auto-save every 10 valid frames OR manual SPACE
             if valid and (frame_count % 10 == 0 or
                           key == ord(" ")):
                 fname = save_dir / f"{student_id}_{saved+1:03d}.jpg"
@@ -251,8 +236,6 @@ def collect_images(student_id: str,
     logger.info("✅ Collection complete for %s", student_id)
     return True
 
-
-# ── CLI ───────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     print("\n🎓 FACE ATTENDANCE — DATA COLLECTION")
