@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}System Logs{% endblock %}
+{% block content %}
+<div class="topbar">
+  <h4><i class="bi bi-journal-text me-2"></i>System Logs</h4>
+</div>
+<div class="table-card">
+  <div class="table-card-header">
+    <h6>Recent Recognition Events (last 100)</h6>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover mb-0">
+      <thead>
+        <tr>
+          <th>#</th><th>Event</th><th>Student ID</th>
+          <th>Confidence</th><th>Timestamp</th><th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for log in logs %}
+        <tr>
+          <td class="text-muted">{{ loop.index }}</td>
+          <td>
+            {% if log.event_type == 'RECOGNIZED' %}
+              <span class="badge-present">✅ Recognized</span>
+            {% elif log.event_type == 'UNKNOWN' %}
+              <span class="badge-unknown">⚠️ Unknown</span>
+            {% else %}
+              <span class="badge-absent">❌ Liveness Fail</span>
+            {% endif %}
+          </td>
+          <td><code>{{ log.student_id or '—' }}</code></td>
+          <td>
+            {{ "%.1f"|format(log.confidence * 100)
+               if log.confidence else '—' }}%
+          </td>
+          <td class="text-muted" style="font-size:.8rem">
+            {{ log.timestamp }}
+          </td>
+          <td class="text-muted" style="font-size:.8rem">
+            {{ log.notes or '—' }}
+          </td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="6" class="text-center text-muted py-4">
+            No logs yet. Run recognition.py to generate events.
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

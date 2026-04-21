@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% block title %}Attendance{% endblock %}
+{% block content %}
+<div class="topbar">
+  <h4><i class="bi bi-calendar-check me-2"></i>
+    Attendance — {{ report.date_display }}</h4>
+  <div class="topbar-right">
+    <div style="position:relative">
+      <span class="date-badge" onclick="toggleCal()">
+        <i class="bi bi-calendar3 me-1"></i>
+        {{ report.date_display }}
+      </span>
+      <div id="cal-popup">
+        <input type="date" id="cal-input"
+               value="{{ target_date }}"
+               class="form-control form-control-sm"
+               onchange="goDate(this.value)"/>
+      </div>
+    </div>
+    {% if is_admin %}
+    <a href="{{ url_for('export_csv',
+               date_str=report.date,
+               subject=report.subject) }}"
+       class="btn btn-sm btn-outline-success">
+      <i class="bi bi-download me-1"></i>CSV
+    </a>
+    {% endif %}
+  </div>
+</div>
+<div class="table-card p-3 mb-4">
+  <div class="d-flex align-items-center gap-3
+              flex-wrap">
+    <span class="fw-600 text-dark">Subject:</span>
+    {% for s in subjects %}
+    <a href="{{ url_for('attendance_view',
+               date_str=target_date) }}?subject={{ s }}"
+       class="btn btn-sm
+         {{ 'btn-primary' if s == report.subject
+            else 'btn-outline-secondary' }}">
+      {{ s }}
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% if report.date_state == 'future' %}
+<div class="table-card p-4 text-center mb-4">
+  <div style="font-size:3rem">📅</div>
+  <h5 class="mt-2 fw-bold" style="color:#3730a3">
+    Attendance Not Started Yet</h5>
+  <p class="text-muted">
+    {{ report.date_display }} is a future date.
+    Attendance records will appear here once the
+    session is conducted.
+  </p>
+</div>
+{% else %}
+<div class="row g-3 mb-4">
+  <div class="col-sm-4">
+    <div class="stat-card text-center">
+      <div class="value text-success">
+        {{ report.present_count }}</div>
+      <div class="label">Present</div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="stat-card text-center">
+      <div class="value text-danger">
+        {{ report.absent_count }}</div>
+      <div class="label">Absent</div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="stat-card text-center">
+      <div class="value" style="color:#4f46e5">
+        {{ report.attendance_pct }}%</div>
+      <div class="label">Rate</div>
+    </div>
+  </div>
+</div>
+<div class="table-card mb-4">
+  <div class="table-card-header">
+    <h6><i class="bi bi-check2-circle
+                  me-2 text-success"></i>
+      Present ({{ report.present_count }})
+      — {{ report.subject }}
+    </h6>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover mb-0">
+      <thead>
+        <tr><th>#</th><th>ID</th><th>Name</th>
+            <th>Time</th><th>Confidence</th>
+            <th>Status</th></tr>
+      </thead>
+      <tbody>
+        {% for r in report.present %}
+        <tr>
+          <td class="text-muted">{{ loop.index }}</td>
+          <td><code>{{ r.student_id }}</code></td>
+          <td>
+            <a href="{{ url_for('student_detail',
+               student_id=r.student_id) }}"
+               class="text-decoration-none fw-500">
+              {{ r.name }}</a>
+          </td>
+          <td>{{ r.time_in }}</td>
+          <td>
+            <span class="badge-present">
+              {{ "%.1f"|format(r.confidence * 100) }}%
+            </span>
+          </td>
+          <td>
+            <span class="badge-present">
+              {{ r.status }}</span>
+          </td>
+        </tr>
+        {% else %}
+        <tr><td colspan="6"
+                class="text-center text-muted py-4">
+          No attendance recorded.
+        </td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="table-card">
+  <div class="table-card-header">
+    <h6><i class="bi bi-x-circle
+                  me-2 text-danger"></i>
+      Absent ({{ report.absent_count }})
+    </h6>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover mb-0">
+      <thead>
+        <tr><th>#</th><th>ID</th>
+            <th>Name</th><th>Department</th></tr>
+      </thead>
+      <tbody>
+        {% for s in report.absent %}
+        <tr>
+          <td class="text-muted">{{ loop.index }}</td>
+          <td><code>{{ s.student_id }}</code></td>
+          <td>
+            <a href="{{ url_for('student_detail',
+               student_id=s.student_id) }}"
+               class="text-decoration-none fw-500">
+              {{ s.name }}</a>
+          </td>
+          <td class="text-muted">
+            {{ s.department or '—' }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="4"
+                class="text-center text-muted py-4">
+          🎉 No absences!
+        </td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
+{% block extra_js %}
+<script>
+function toggleCal() {
+  document.getElementById('cal-popup')
+    .classList.toggle('open');
+}
+function goDate(val) {
+  const subj = new URLSearchParams(
+    window.location.search).get('subject') || '';
+  window.location = '/attendance/' + val
+    + (subj ? '?subject=' + subj : '');
+}
+document.addEventListener('click', function(e) {
+  const popup = document.getElementById('cal-popup');
+  const badge = document.querySelector('.date-badge');
+  if (badge && !badge.contains(e.target) &&
+      !popup.contains(e.target)) {
+    popup.classList.remove('open');
+  }
+});
+</script>
+{% endblock %}

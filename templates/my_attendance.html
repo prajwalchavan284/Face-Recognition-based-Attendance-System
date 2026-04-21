@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}My Attendance{% endblock %}
+{% block content %}
+<div class="topbar">
+  <h4><i class="bi bi-calendar-check me-2"></i>
+    My Attendance — {{ report.date_display }}</h4>
+  <div style="position:relative">
+    <span class="date-badge" onclick="toggleCal()">
+      <i class="bi bi-calendar3 me-1"></i>
+      {{ report.date_display }}
+    </span>
+    <div id="cal-popup">
+      <input type="date" id="cal-input"
+             value="{{ target_date }}"
+             class="form-control form-control-sm"
+             onchange="goDate(this.value)"/>
+    </div>
+  </div>
+</div>
+<div class="table-card p-3 mb-4">
+  <div class="d-flex align-items-center gap-3">
+    <span class="fw-600">Subject:</span>
+    {% for s in subjects %}
+    <a href="{{ url_for('attendance_view',
+               date_str=target_date) }}?subject={{ s }}"
+       class="btn btn-sm
+         {{ 'btn-primary' if s == report.subject
+            else 'btn-outline-secondary' }}">
+      {{ s }}
+    </a>
+    {% endfor %}
+  </div>
+</div>
+<div class="table-card p-4 text-center">
+  {% if report.date_state == 'future' %}
+    <div style="font-size:3rem">📅</div>
+    <h5 class="mt-2 fw-bold" style="color:#3730a3">
+      Attendance Not Started Yet</h5>
+    <p class="text-muted">
+      {{ report.date_display }} is a future date.
+    </p>
+  {% elif report.marked %}
+    <div style="font-size:3rem">✅</div>
+    <h5 class="mt-2 text-success fw-bold">
+      Present</h5>
+    <p class="text-muted">
+      You were marked present for
+      <strong>{{ report.subject }}</strong>
+      on {{ report.date_display }}
+      at {{ report.my_record.time_in }}
+      with
+      {{ "%.0f"|format(
+         report.my_record.confidence * 100) }}%
+      confidence.
+    </p>
+  {% else %}
+    <div style="font-size:3rem">❌</div>
+    <h5 class="mt-2 text-danger fw-bold">
+      {% if report.date_state == 'today' %}
+        Not Yet Marked
+      {% else %}
+        Absent
+      {% endif %}
+    </h5>
+    <p class="text-muted">
+      {% if report.date_state == 'today' %}
+        Your attendance for today has not been
+        recorded yet.
+      {% else %}
+        You were absent for
+        <strong>{{ report.subject }}</strong>
+        on {{ report.date_display }}.
+      {% endif %}
+    </p>
+  {% endif %}
+</div>
+{% endblock %}
+{% block extra_js %}
+<script>
+function toggleCal() {
+  document.getElementById('cal-popup')
+    .classList.toggle('open');
+}
+function goDate(val) {
+  const subj = new URLSearchParams(
+    window.location.search).get('subject') || '';
+  window.location = '/attendance/' + val
+    + (subj ? '?subject=' + subj : '');
+}
+</script>
+{% endblock %}

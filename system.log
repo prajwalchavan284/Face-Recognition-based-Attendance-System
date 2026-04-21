@@ -1,0 +1,761 @@
+2026-04-04 22:37:04 | INFO     | test | Logger is working
+2026-04-04 22:37:40 | INFO     | check | All 3 foundation modules loaded successfully
+2026-04-06 16:35:32 | INFO     | __main__ | Registered: Prajwal Chavan (CS2022002)
+2026-04-06 16:35:32 | ERROR    | __main__ | Cannot open camera 0
+2026-04-06 16:36:21 | INFO     | __main__ | Registered: Prajwal Chavan (RE273744894)
+2026-04-06 16:36:24 | INFO     | __main__ | Saved 1/10 → RE273744894_001.jpg
+2026-04-06 16:36:25 | INFO     | __main__ | Saved 2/10 → RE273744894_002.jpg
+2026-04-06 16:36:25 | INFO     | __main__ | Saved 3/10 → RE273744894_003.jpg
+2026-04-06 16:36:25 | INFO     | __main__ | Saved 4/10 → RE273744894_004.jpg
+2026-04-06 16:36:26 | INFO     | __main__ | Saved 5/10 → RE273744894_005.jpg
+2026-04-06 16:36:26 | INFO     | __main__ | Saved 6/10 → RE273744894_006.jpg
+2026-04-06 16:36:26 | INFO     | __main__ | Saved 7/10 → RE273744894_007.jpg
+2026-04-06 16:36:27 | INFO     | __main__ | Saved 8/10 → RE273744894_008.jpg
+2026-04-06 16:36:27 | INFO     | __main__ | Saved 9/10 → RE273744894_009.jpg
+2026-04-06 16:36:27 | INFO     | __main__ | Saved 10/10 → RE273744894_010.jpg
+2026-04-06 16:36:27 | INFO     | __main__ | ✅ Collection complete for RE273744894
+2026-04-06 16:36:52 | WARNING  | __main__ | No images in: /Users/prajwal/Desktop/face_attendance_system/data/images/CS2022002
+2026-04-06 16:37:11 | INFO     | __main__ | ✅ Saved encodings → /Users/prajwal/Desktop/face_attendance_system/data/encodings/encodings.pkl
+2026-04-06 16:37:11 | INFO     | __main__ | ✅ Encodings loaded: 1 students | model: ArcFace
+2026-04-06 16:37:29 | INFO     | train_model | ✅ Encodings loaded: 1 students | model: ArcFace
+2026-04-06 16:37:29 | INFO     | __main__ | Loaded 1 known students
+2026-04-06 16:56:48 | INFO     | train_model | ✅ Encodings loaded: 1 students | model: ArcFace
+2026-04-06 16:56:48 | INFO     | __main__ | Loaded 1 known students
+2026-04-06 16:56:48 | ERROR    | __main__ | Cannot open camera.
+2026-04-06 16:57:07 | INFO     | train_model | ✅ Encodings loaded: 1 students | model: ArcFace
+2026-04-06 16:57:07 | INFO     | __main__ | Loaded 1 known students
+2026-04-06 17:17:59 | INFO     | train_model | ✅ Encodings loaded: 1 students | model: ArcFace
+2026-04-06 17:17:59 | INFO     | __main__ | Loaded 1 known students
+2026-04-06 17:18:51 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:51 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:51 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:51 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:51 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:52 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:52 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:52 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:52 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:54 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:54 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:54 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:54 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:54 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:55 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:55 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:55 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:55 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:55 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:56 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:56 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:56 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:56 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:57 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:58 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:58 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:18:58 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:23 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:23 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:23 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:23 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:23 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:28 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:28 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:28 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:28 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:28 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:29 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:29 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:29 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:47 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:48 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:48 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:49 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:49 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:50 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:19:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:07 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:08 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:08 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:08 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:08 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:09 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:09 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:10 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:11 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:12 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:12 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:13 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:13 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:13 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:13 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:14 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:14 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:14 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:14 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:14 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:15 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:15 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:15 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:16 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:16 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:16 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:17 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:17 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:17 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:18 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:18 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:18 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:18 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:19 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:19 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:20 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:20 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:20 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:20 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:21 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:21 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:21 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:21 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:21 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:23 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:23 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:23 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:23 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:28 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:28 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:28 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:28 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:29 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:29 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:29 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:30 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:30 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:31 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:31 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:31 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:31 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:31 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:32 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:32 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:32 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:32 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:32 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:33 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:33 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:33 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:33 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:33 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:34 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:34 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:34 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:34 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:34 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:35 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:35 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:35 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:41 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:41 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:20:43 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:06 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:06 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:06 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:07 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:08 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:08 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:10 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:11 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:12 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:12 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:13 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:13 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:13 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:13 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:14 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:14 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:14 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:14 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:15 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:15 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:15 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:15 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:15 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:16 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:16 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:16 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:16 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:16 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:17 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:17 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:17 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:17 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:18 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:18 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:18 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:18 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:18 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:19 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:19 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:19 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:19 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:19 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:20 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:20 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:20 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:20 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:20 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:21 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:21 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:21 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:21 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:21 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:23 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:23 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:23 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:23 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:23 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:28 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:28 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:28 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:28 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:28 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:29 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:29 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:29 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:29 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:29 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:30 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:30 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:30 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:30 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:30 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:31 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:31 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:31 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:31 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:31 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:32 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:32 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:32 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:32 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:32 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:33 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:33 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:33 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:33 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:33 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:34 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:34 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:35 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:35 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:35 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:36 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:36 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:36 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:36 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:36 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:37 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:37 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:37 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:37 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:38 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:38 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:38 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:38 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:38 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:39 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:39 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:39 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:39 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:39 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:40 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:40 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:40 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:40 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:40 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:41 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:41 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:41 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:41 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:41 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:42 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:42 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:42 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:42 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:42 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:43 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:43 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:43 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:43 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:43 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:44 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:44 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:44 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:44 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:45 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:45 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:45 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:45 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:45 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:46 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:46 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:46 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:46 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:47 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:47 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:47 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:47 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:48 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:48 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:48 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:49 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:49 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:49 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:49 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:50 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:50 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:50 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:50 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:51 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:51 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:51 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:51 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:52 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:52 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:52 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:52 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:54 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:54 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:54 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:54 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:54 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:55 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:55 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:55 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:55 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:55 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:56 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:56 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:56 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:56 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:56 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:57 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:57 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:57 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:57 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:57 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:58 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:58 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:58 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:58 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:58 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:59 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:59 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:59 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:59 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:21:59 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:00 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:00 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:00 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:00 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:00 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:01 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:01 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:01 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:01 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:01 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:02 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:02 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:02 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:02 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:02 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:03 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:03 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:03 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:03 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:03 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:04 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:04 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:04 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:04 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:04 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:05 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:05 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:05 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:05 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:05 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:06 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:06 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:06 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:07 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:07 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:07 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:07 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:07 | INFO     | __main__ | Registered via web: Sahil Jadhav (FD7363782)
+2026-04-06 17:22:08 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:08 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:08 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:08 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:08 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:09 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:09 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:11 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:12 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:12 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:12 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:12 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:13 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:13 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:15 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:15 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:16 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:17 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:18 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:19 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:19 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:21 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:21 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:23 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:24 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:27 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:22:28 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:23:32 | INFO     | __main__ | Registered: Sahil Jadhav (FD7698997)
+2026-04-06 17:23:34 | INFO     | __main__ | Saved 1/10 → FD7698997_001.jpg
+2026-04-06 17:23:35 | INFO     | __main__ | Saved 2/10 → FD7698997_002.jpg
+2026-04-06 17:23:35 | INFO     | __main__ | Saved 3/10 → FD7698997_003.jpg
+2026-04-06 17:23:35 | INFO     | __main__ | Saved 4/10 → FD7698997_004.jpg
+2026-04-06 17:23:36 | INFO     | __main__ | Saved 5/10 → FD7698997_005.jpg
+2026-04-06 17:23:36 | INFO     | __main__ | Saved 6/10 → FD7698997_006.jpg
+2026-04-06 17:23:36 | INFO     | __main__ | Saved 7/10 → FD7698997_007.jpg
+2026-04-06 17:23:37 | INFO     | __main__ | Saved 8/10 → FD7698997_008.jpg
+2026-04-06 17:23:37 | INFO     | __main__ | Saved 9/10 → FD7698997_009.jpg
+2026-04-06 17:23:37 | INFO     | __main__ | Saved 10/10 → FD7698997_010.jpg
+2026-04-06 17:23:37 | INFO     | __main__ | ✅ Collection complete for FD7698997
+2026-04-06 17:23:59 | INFO     | __main__ | Loaded existing encodings: 1 students
+2026-04-06 17:24:01 | INFO     | __main__ | Skip (already trained): RE273744894
+2026-04-06 17:24:01 | INFO     | __main__ | ✅ Saved encodings → /Users/prajwal/Desktop/face_attendance_system/data/encodings/encodings.pkl
+2026-04-06 17:24:01 | INFO     | __main__ | ✅ Encodings loaded: 2 students | model: ArcFace
+2026-04-06 17:24:30 | INFO     | train_model | ✅ Encodings loaded: 2 students | model: ArcFace
+2026-04-06 17:24:30 | INFO     | __main__ | Loaded 2 known students
+2026-04-06 17:24:51 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:51 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:51 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:51 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:51 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:52 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:52 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:52 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:52 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:52 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:53 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:54 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:54 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:54 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:54 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:54 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:55 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:55 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:55 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:55 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:55 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:56 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:56 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:56 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:56 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:56 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:57 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:57 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:57 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:57 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:57 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:58 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:58 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:58 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:58 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:58 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:59 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:59 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:59 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:59 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:24:59 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:00 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:00 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:00 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:09 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:09 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:10 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:10 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:10 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:10 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:11 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:11 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:11 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:11 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:12 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:14 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:15 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:15 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:15 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:15 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:16 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:16 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:16 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:16 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:16 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:17 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:17 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:17 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:17 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:18 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:18 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:18 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:19 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:19 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:19 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:19 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:19 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:20 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:20 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:20 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:21 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:22 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:22 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:22 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:23 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:23 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:23 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:23 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:24 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:24 | INFO     | __main__ | ℹ️  Sahil Jadhav already marked Present today at 11:54:44
+2026-04-06 17:25:25 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:26 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:35 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:35 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:36 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:36 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:36 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:38 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:39 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:39 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:40 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:40 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:40 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-06 17:25:40 | INFO     | __main__ | ℹ️  Prajwal Chavan already marked Present today at 11:48:05
+2026-04-07 14:52:17 | INFO     | __main__ | Login: admin (admin)
+2026-04-07 14:52:17 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:52:25 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:52:26 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:52:27 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:52:27 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:52:28 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:52:28 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:52:29 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:52:29 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:52:30 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:52:31 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:52:35 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:56:34 | WARNING  | train_model | No images in: /Users/prajwal/Desktop/face_attendance_system/data/images/EC22221
+2026-04-07 14:56:36 | INFO     | train_model | ✅ Saved encodings → /Users/prajwal/Desktop/face_attendance_system/data/encodings/encodings.pkl
+2026-04-07 14:57:02 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:57:04 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:57:05 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:57:06 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:03 | INFO     | __main__ | Login: aditya (student)
+2026-04-07 14:58:03 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:06 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:07 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:08 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:08 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:12 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:13 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:14 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:15 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:16 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:17 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:17 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:17 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:17 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:18 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:18 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:18 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:19 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:20 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:21 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:23 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:37 | INFO     | __main__ | Login: admin (admin)
+2026-04-07 14:58:37 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:43 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:44 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-07 14:58:45 | ERROR    | __main__ | 500: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-21 10:00:59 | INFO     | __main__ | Login: admin (admin)
+2026-04-21 10:03:05 | ERROR    | data_collection | Cannot open camera 0
+2026-04-21 10:03:24 | WARNING  | train_model | No images in: /Users/prajwal/Desktop/face_attendance_system/data/images/EC22221
+2026-04-21 10:03:26 | WARNING  | train_model | No images in: /Users/prajwal/Desktop/face_attendance_system/data/images/MITU22BTEC0049
+2026-04-21 10:03:27 | INFO     | train_model | ✅ Saved encodings → /Users/prajwal/Desktop/face_attendance_system/data/encodings/encodings.pkl
+2026-04-21 10:04:09 | WARNING  | train_model | No images in: /Users/prajwal/Desktop/face_attendance_system/data/images/EC22221
+2026-04-21 10:04:10 | WARNING  | train_model | No images in: /Users/prajwal/Desktop/face_attendance_system/data/images/MITU22BTEC0049
+2026-04-21 10:04:10 | INFO     | train_model | ✅ Saved encodings → /Users/prajwal/Desktop/face_attendance_system/data/encodings/encodings.pkl
+2026-04-21 11:15:49 | INFO     | __main__ | Login: admin (admin)
+2026-04-21 11:16:01 | ERROR    | data_collection | Camera read failed.
+2026-04-21 11:16:01 | WARNING  | data_collection | Only 0 images. Min 5 needed. Run again for better accuracy.
+2026-04-21 11:16:07 | ERROR    | data_collection | Camera read failed.
+2026-04-21 11:16:07 | WARNING  | data_collection | Only 0 images. Min 5 needed. Run again for better accuracy.
+2026-04-21 11:16:14 | WARNING  | train_model | No images in: /Users/prajwal/Desktop/face_attendance_system/data/images/EC22221
+2026-04-21 11:16:15 | WARNING  | train_model | No images in: /Users/prajwal/Desktop/face_attendance_system/data/images/MITU22BTEC0049
+2026-04-21 11:16:16 | INFO     | train_model | ✅ Saved encodings → /Users/prajwal/Desktop/face_attendance_system/data/encodings/encodings.pkl
+2026-04-21 11:16:53 | INFO     | recognition | Recognition thread started.
+2026-04-21 11:16:53 | INFO     | train_model | ✅ Encodings loaded: 2 students | model: ArcFace
+2026-04-21 11:16:55 | INFO     | recognition | Recognition started | subject: General | students: 2
+2026-04-21 11:16:56 | INFO     | recognition | Recognition stopped.
+2026-04-21 11:16:56 | INFO     | utils | Email disabled. Skipping notification.
+2026-04-21 11:16:57 | INFO     | recognition | Recognition thread started.
+2026-04-21 11:16:57 | INFO     | train_model | ✅ Encodings loaded: 2 students | model: ArcFace
+2026-04-21 11:16:59 | INFO     | recognition | Recognition started | subject: General | students: 2
+2026-04-21 11:17:00 | INFO     | recognition | Recognition stopped.
+2026-04-21 11:17:00 | INFO     | utils | Email disabled. Skipping notification.
+2026-04-21 11:23:18 | ERROR    | data_collection | Camera read failed.
+2026-04-21 11:23:18 | WARNING  | data_collection | Only 0 images. Min 5 needed. Run again for better accuracy.
+2026-04-21 11:24:03 | INFO     | data_collection | Saved 1/10 → MITU22BTEC0049_001.jpg
+2026-04-21 11:24:04 | INFO     | data_collection | Saved 2/10 → MITU22BTEC0049_002.jpg
+2026-04-21 11:24:04 | INFO     | data_collection | Saved 3/10 → MITU22BTEC0049_003.jpg
+2026-04-21 11:24:04 | INFO     | data_collection | Saved 4/10 → MITU22BTEC0049_004.jpg
+2026-04-21 11:24:05 | INFO     | data_collection | Saved 5/10 → MITU22BTEC0049_005.jpg
+2026-04-21 11:24:05 | INFO     | data_collection | Saved 6/10 → MITU22BTEC0049_006.jpg
+2026-04-21 11:24:05 | INFO     | data_collection | Saved 7/10 → MITU22BTEC0049_007.jpg
+2026-04-21 11:24:06 | INFO     | data_collection | Saved 8/10 → MITU22BTEC0049_008.jpg
+2026-04-21 11:24:06 | INFO     | data_collection | Saved 9/10 → MITU22BTEC0049_009.jpg
+2026-04-21 11:24:06 | INFO     | data_collection | Saved 10/10 → MITU22BTEC0049_010.jpg
+2026-04-21 11:24:06 | INFO     | data_collection | ✅ Collection complete for MITU22BTEC0049
+2026-04-21 11:24:14 | WARNING  | train_model | No images in: /Users/prajwal/Desktop/face_attendance_system/data/images/EC22221
+2026-04-21 11:24:17 | INFO     | train_model | ✅ Saved encodings → /Users/prajwal/Desktop/face_attendance_system/data/encodings/encodings.pkl
+2026-04-21 11:25:55 | INFO     | data_collection | Saved 1/10 → MITU22BTEC0053_001.jpg
+2026-04-21 11:25:56 | INFO     | data_collection | Saved 2/10 → MITU22BTEC0053_002.jpg
+2026-04-21 11:25:56 | INFO     | data_collection | Saved 3/10 → MITU22BTEC0053_003.jpg
+2026-04-21 11:25:56 | INFO     | data_collection | Saved 4/10 → MITU22BTEC0053_004.jpg
+2026-04-21 11:25:57 | INFO     | data_collection | Saved 5/10 → MITU22BTEC0053_005.jpg
+2026-04-21 11:25:57 | INFO     | data_collection | Saved 6/10 → MITU22BTEC0053_006.jpg
+2026-04-21 11:25:57 | INFO     | data_collection | Saved 7/10 → MITU22BTEC0053_007.jpg
+2026-04-21 11:25:58 | INFO     | data_collection | Saved 8/10 → MITU22BTEC0053_008.jpg
+2026-04-21 11:25:58 | INFO     | data_collection | Saved 9/10 → MITU22BTEC0053_009.jpg
+2026-04-21 11:25:58 | INFO     | data_collection | Saved 10/10 → MITU22BTEC0053_010.jpg
+2026-04-21 11:25:58 | INFO     | data_collection | ✅ Collection complete for MITU22BTEC0053
+2026-04-21 11:26:06 | WARNING  | train_model | No images in: /Users/prajwal/Desktop/face_attendance_system/data/images/EC22221
+2026-04-21 11:26:09 | INFO     | train_model | ✅ Saved encodings → /Users/prajwal/Desktop/face_attendance_system/data/encodings/encodings.pkl
+2026-04-21 11:26:29 | INFO     | __main__ | Login: prajwal (student)
+2026-04-21 11:31:42 | INFO     | __main__ | Login: admin (admin)
+2026-04-21 11:31:47 | INFO     | recognition | Recognition thread started.
+2026-04-21 11:31:47 | INFO     | train_model | ✅ Encodings loaded: 4 students | model: ArcFace
+2026-04-21 11:31:48 | INFO     | recognition | Recognition started | subject: General | students: 4
+2026-04-21 11:32:02 | INFO     | recognition | Recognition thread stopped.
+2026-04-21 11:32:04 | INFO     | recognition | Recognition thread started.
+2026-04-21 11:32:04 | INFO     | train_model | ✅ Encodings loaded: 4 students | model: ArcFace
+2026-04-21 11:32:05 | INFO     | recognition | Recognition started | subject: General | students: 4
+2026-04-21 11:32:11 | INFO     | recognition | Recognition already running.
+2026-04-21 11:32:16 | INFO     | recognition | Recognition thread stopped.
+2026-04-21 11:32:17 | INFO     | recognition | Recognition thread started.
+2026-04-21 11:32:17 | INFO     | train_model | ✅ Encodings loaded: 4 students | model: ArcFace
+2026-04-21 11:32:18 | INFO     | recognition | Recognition started | subject: General | students: 4
+2026-04-21 11:38:31 | INFO     | recognition | Recognition thread stopped.

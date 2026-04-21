@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block title %}{{ history.student.name }}{% endblock %}
+{% block content %}
+<div class="topbar">
+  <h4>
+    <a href="{{ url_for('students') }}"
+       class="text-decoration-none text-muted me-2">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+    {{ history.student.name }}
+  </h4>
+</div>
+<div class="row g-3 mb-4">
+  <div class="col-md-4">
+    <div class="table-card p-4">
+      <div class="text-center mb-3">
+        <div style="width:72px;height:72px;border-radius:50%;
+                    background:#e0e7ff;display:flex;
+                    align-items:center;justify-content:center;
+                    margin:0 auto;font-size:2rem;">
+          <i class="bi bi-person-fill" style="color:#4f46e5"></i>
+        </div>
+        <h5 class="mt-3 mb-0 fw-700">
+          {{ history.student.name }}
+        </h5>
+        <small class="text-muted">
+          {{ history.student.student_id }}
+        </small>
+      </div>
+      <hr/>
+      <div class="small">
+        <div class="d-flex justify-content-between py-1">
+          <span class="text-muted">Department</span>
+          <span class="fw-500">
+            {{ history.student.department or '—' }}
+          </span>
+        </div>
+        <div class="d-flex justify-content-between py-1">
+          <span class="text-muted">Email</span>
+          <span class="fw-500">
+            {{ history.student.email or '—' }}
+          </span>
+        </div>
+        <div class="d-flex justify-content-between py-1">
+          <span class="text-muted">Registered</span>
+          <span class="fw-500">
+            {{ history.student.registered_at[:10]
+               if history.student.registered_at else '—' }}
+          </span>
+        </div>
+      </div>
+      <hr/>
+      <div class="text-center">
+        <div class="fw-800 fs-3" style="color:#4f46e5">
+          {{ history.attendance_pct }}%
+        </div>
+        <div class="text-muted small">Overall Attendance</div>
+        <div class="text-muted small mt-1">
+          {{ history.days_present }} / {{ history.total_days }} days
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="table-card">
+      <div class="table-card-header">
+        <h6><i class="bi bi-clock-history me-2"></i>
+          Attendance History ({{ history.records|length }})</h6>
+      </div>
+      <div class="table-responsive"
+           style="max-height:480px;overflow-y:auto">
+        <table class="table table-hover mb-0">
+          <thead>
+            <tr>
+              <th>#</th><th>Date</th>
+              <th>Time In</th><th>Confidence</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for r in history.records %}
+            <tr>
+              <td class="text-muted">{{ loop.index }}</td>
+              <td>{{ r.date }}</td>
+              <td>{{ r.time_in }}</td>
+              <td>
+                <span class="badge-present">
+                  {{ "%.1f"|format(r.confidence * 100)
+                     if r.confidence else '—' }}%
+                </span>
+              </td>
+              <td>
+                <span class="badge-present">{{ r.status }}</span>
+              </td>
+            </tr>
+            {% else %}
+            <tr>
+              <td colspan="5"
+                  class="text-center text-muted py-4">
+                No attendance records yet.
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

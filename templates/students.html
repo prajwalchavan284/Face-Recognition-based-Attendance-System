@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}Students{% endblock %}
+{% block content %}
+<div class="topbar">
+  <h4><i class="bi bi-people me-2"></i>Students</h4>
+  <a href="{{ url_for('add_student') }}"
+     class="btn btn-primary btn-sm">
+    <i class="bi bi-person-plus me-1"></i>Add Student
+  </a>
+</div>
+<div class="table-card">
+  <div class="table-card-header">
+    <h6>All Students ({{ students|length }})</h6>
+    <input type="text" id="searchBox"
+           class="form-control form-control-sm w-auto"
+           placeholder="🔍 Search…"
+           onkeyup="filterTable()"/>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover mb-0"
+           id="studentsTable">
+      <thead>
+        <tr><th>#</th><th>ID</th><th>Name</th>
+            <th>Dept</th><th>Email</th>
+            <th>Registered</th><th>Actions</th></tr>
+      </thead>
+      <tbody>
+        {% for s in students %}
+        <tr>
+          <td class="text-muted">{{ loop.index }}</td>
+          <td><code>{{ s.student_id }}</code></td>
+          <td class="fw-500">{{ s.name }}</td>
+          <td class="text-muted">
+            {{ s.department or '—' }}</td>
+          <td class="text-muted">
+            {{ s.email or '—' }}</td>
+          <td class="text-muted"
+              style="font-size:.8rem">
+            {{ s.registered_at[:10]
+               if s.registered_at else '—' }}
+          </td>
+          <td>
+            <div class="d-flex gap-1">
+              <a href="{{ url_for('student_detail',
+                 student_id=s.student_id) }}"
+                 class="btn btn-sm
+                        btn-outline-primary">
+                View
+              </a>
+              <a href="{{ url_for('edit_student',
+                 student_id=s.student_id) }}"
+                 class="btn btn-sm
+                        btn-outline-secondary">
+                Edit
+              </a>
+              <a href="{{ url_for('capture_images',
+                 student_id=s.student_id) }}"
+                 class="btn btn-sm
+                        btn-outline-success">
+                📷
+              </a>
+              <form method="POST"
+                    action="{{ url_for(
+                    'delete_student',
+                    student_id=s.student_id) }}"
+                    onsubmit="return confirm(
+                    'Delete {{ s.name }}?')">
+                <button class="btn btn-sm
+                               btn-outline-danger">
+                  🗑
+                </button>
+              </form>
+            </div>
+          </td>
+        </tr>
+        {% else %}
+        <tr><td colspan="7"
+                class="text-center text-muted py-4">
+          No students yet.
+          <a href="{{ url_for('add_student') }}">
+            Add one →</a>
+        </td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script>
+function filterTable() {
+  const q = document.getElementById('searchBox')
+    .value.toLowerCase();
+  document.querySelectorAll(
+    '#studentsTable tbody tr')
+    .forEach(r => {
+      r.style.display =
+        r.textContent.toLowerCase().includes(q)
+        ? '' : 'none';
+    });
+}
+</script>
+{% endblock %}

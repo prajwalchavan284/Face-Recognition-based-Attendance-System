@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Add Student{% endblock %}
+{% block content %}
+<div class="topbar">
+  <h4><i class="bi bi-person-plus me-2"></i>
+    Add Student</h4>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="table-card p-4">
+      <h6 class="fw-bold mb-4 text-dark">
+        <i class="bi bi-person-badge
+                  me-2 text-primary"></i>
+        New Student
+      </h6>
+      <form method="POST">
+        <div class="mb-3">
+          <label class="form-label fw-600">
+            Student ID <span class="text-danger">*</span>
+          </label>
+          <input type="text" name="student_id"
+                 class="form-control"
+                 placeholder="e.g. CS2021001"
+                 required/>
+          <div class="form-text">
+            Must be unique — used as primary key.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-600">
+            Full Name <span class="text-danger">*</span>
+          </label>
+          <input type="text" name="name"
+                 class="form-control"
+                 placeholder="e.g. Prajwal Chavan"
+                 required/>
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-600">Email</label>
+          <input type="email" name="email"
+                 class="form-control"
+                 placeholder="optional"/>
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-600">
+            Department</label>
+          <select name="department"
+                  class="form-select">
+            <option value="">— Select —</option>
+            <option>Computer Engineering</option>
+            <option>Information Technology</option>
+            <option>Electronics</option>
+            <option>Mechanical Engineering</option>
+            <option>Civil Engineering</option>
+          </select>
+        </div>
+        <hr class="my-3"/>
+        <h6 class="fw-bold mb-3 text-dark">
+          <i class="bi bi-person-lock
+                    me-2 text-warning"></i>
+          Login Credentials (optional)
+        </h6>
+        <div class="mb-3">
+          <label class="form-label fw-600">
+            Username</label>
+          <input type="text" name="username"
+                 class="form-control"
+                 placeholder="Student login username"/>
+        </div>
+        <div class="mb-4">
+          <label class="form-label fw-600">
+            Password</label>
+          <input type="text" name="password"
+                 class="form-control"
+                 placeholder="Student login password"/>
+        </div>
+        <div class="d-flex gap-2">
+          <button type="submit"
+                  class="btn btn-primary px-4">
+            <i class="bi bi-check2 me-1"></i>
+            Add & Capture Photos
+          </button>
+          <a href="{{ url_for('students') }}"
+             class="btn btn-outline-secondary px-4">
+            Cancel
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

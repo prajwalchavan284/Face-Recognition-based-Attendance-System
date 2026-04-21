@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}Capture Photos{% endblock %}
+{% block content %}
+<div class="topbar">
+  <h4>
+    <a href="{{ url_for('students') }}"
+       class="text-muted text-decoration-none me-2">
+      <i class="bi bi-arrow-left"></i></a>
+    Capture Photos — {{ student.name }}
+  </h4>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-7">
+    <div class="table-card p-4 text-center">
+      <div style="font-size:4rem">📷</div>
+      <h5 class="mt-2 fw-bold">
+        {{ student.name }}
+        <code class="fs-6 text-muted ms-2">
+          {{ student.student_id }}</code>
+      </h5>
+      <p class="text-muted mb-4">
+        Clicking "Start Capture" will open the webcam
+        on this machine and automatically capture
+        {{ config.CAPTURE_COUNT if config else 10 }}
+        face images. Keep the student in front of
+        the camera.
+      </p>
+      <div id="status-box"
+           class="alert alert-info mb-4"
+           style="display:none"></div>
+      <div class="d-flex justify-content-center
+                  gap-3">
+        <button id="btn-capture"
+                class="btn btn-success btn-lg px-5"
+                onclick="startCapture()">
+          <i class="bi bi-camera me-2"></i>
+          Start Capture
+        </button>
+        <button id="btn-train"
+                class="btn btn-primary btn-lg px-5"
+                onclick="trainModel()"
+                style="display:none">
+          <i class="bi bi-cpu me-2"></i>
+          Train Model
+        </button>
+        <a href="{{ url_for('students') }}"
+           class="btn btn-outline-secondary btn-lg">
+          Done
+        </a>
+      </div>
+      <div class="mt-4 text-muted"
+           style="font-size:.85rem">
+        <i class="bi bi-info-circle me-1"></i>
+        After capture, click "Train Model" to update
+        the face encodings. Recognition won't work
+        until training is complete.
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script>
+const SID = "{{ student.student_id }}";
+async function startCapture() {
+  document.getElementById('btn-capture')
+    .disabled = true;
+  showStatus('info',
+    '⏳ Capture started — watch the webcam window. '
+    + 'This takes ~30 seconds.');
+  const res = await fetch(
+    `/api/capture/start/${SID}`,
+    {method:'POST',
+     headers:{'Content-Type':'application/json'}});
+  const data = await res.json();
+  if (res.ok) {
+    showStatus('success',
+      '✅ ' + data.message
+      + ' Click "Train Model" when done.');
+    document.getElementById('btn-train')
+      .style.display = 'inline-block';
+  } else {
+    showStatus('danger',
+      '❌ ' + (data.error || 'Failed'));
+    document.getElementById('btn-capture')
+      .disabled = false;
+  }
+}
+async function trainModel() {
+  document.getElementById('btn-train')
+    .disabled = true;
+  showStatus('info',
+    '⏳ Training ArcFace model… '
+    + 'this takes 20-30 seconds.');
+  const res = await fetch('/api/train',
+    {method:'POST'});
+  const data = await res.json();
+  showStatus('success',
+    '✅ ' + data.message
+    + ' Recognition is now updated.');
+}
+function showStatus(type, msg) {
+  const box = document.getElementById('status-box');
+  box.className = `alert alert-${type}`;
+  box.textContent = msg;
+  box.style.display = 'block';
+}
+</script>
+{% endblock %}

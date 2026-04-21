@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Edit {{ student.name }}{% endblock %}
+{% block content %}
+<div class="topbar">
+  <h4>
+    <a href="{{ url_for('students') }}"
+       class="text-muted text-decoration-none me-2">
+      <i class="bi bi-arrow-left"></i></a>
+    Edit — {{ student.name }}
+  </h4>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="table-card p-4">
+      <form method="POST">
+        <div class="mb-3">
+          <label class="form-label fw-600">
+            Student ID
+          </label>
+          <input type="text"
+                 class="form-control"
+                 value="{{ student.student_id }}"
+                 disabled/>
+          <div class="form-text">
+            ID cannot be changed (primary key).
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-600">
+            Full Name <span class="text-danger">*</span>
+          </label>
+          <input type="text" name="name"
+                 class="form-control"
+                 value="{{ student.name }}"
+                 required/>
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-600">Email</label>
+          <input type="email" name="email"
+                 class="form-control"
+                 value="{{ student.email or '' }}"/>
+        </div>
+        <div class="mb-4">
+          <label class="form-label fw-600">
+            Department</label>
+          <select name="department" class="form-select">
+            <option value="">— Select —</option>
+            {% for dept in ['Computer Engineering',
+              'Information Technology','Electronics',
+              'Mechanical Engineering',
+              'Civil Engineering'] %}
+            <option
+              {% if student.department == dept %}
+                selected{% endif %}>
+              {{ dept }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="d-flex gap-2">
+          <button type="submit"
+                  class="btn btn-primary px-4">
+            <i class="bi bi-check2 me-1"></i>
+            Save Changes
+          </button>
+          <a href="{{ url_for('students') }}"
+             class="btn btn-outline-secondary px-4">
+            Cancel
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

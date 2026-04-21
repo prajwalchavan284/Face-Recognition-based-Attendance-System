@@ -1,15 +1,10 @@
-# attendance.py
 import csv
 import io
 from datetime import date, datetime, timedelta
-
 import config
 import database
 from utils import setup_logger, send_absent_email
-
 logger = setup_logger(__name__)
-
-
 def get_daily_report(target_date: date = None,
                      subject: str = None) -> dict:
     target_date = target_date or date.today()
@@ -17,16 +12,13 @@ def get_daily_report(target_date: date = None,
     present     = database.get_attendance_by_date(
         target_date, subject)
     today       = date.today()
-
     if target_date > today:
         date_state = "future"
         absent     = []
     else:
-        date_state = "today" if target_date == today \
-                     else "past"
+        date_state = "today" if target_date == today                     else "past"
         absent     = database.get_absent_students(
             target_date, subject)
-
     total = len(database.get_all_students())
     return {
         "date"          : target_date.strftime("%Y-%m-%d"),
@@ -43,12 +35,9 @@ def get_daily_report(target_date: date = None,
             len(present) / total * 100, 1)
                           if total else 0,
     }
-
-
 def get_student_daily_report(student_id: str,
                               target_date: date = None,
                               subject: str = None) -> dict:
-    """Report for a single student — used by student role."""
     target_date = target_date or date.today()
     subject     = subject or config.DEFAULT_SUBJECT
     records     = database.get_attendance_by_date(
@@ -68,8 +57,6 @@ def get_student_daily_report(student_id: str,
         "my_record"   : my_record,
         "marked"      : my_record is not None,
     }
-
-
 def get_weekly_summary(subject: str = None) -> list:
     subject = subject or config.DEFAULT_SUBJECT
     total   = len(database.get_all_students())
@@ -87,8 +74,6 @@ def get_weekly_summary(subject: str = None) -> list:
                        if total else 0,
         })
     return summary
-
-
 def get_student_history(student_id: str,
                         subject: str = None) -> dict:
     student = database.get_student_by_id(student_id)
@@ -111,8 +96,6 @@ def get_student_history(student_id: str,
             len(records) / total_days * 100, 1)
                           if total_days else 0,
     }
-
-
 def get_dashboard_stats(subject: str = None) -> dict:
     subject     = subject or config.DEFAULT_SUBJECT
     today       = date.today()
@@ -126,8 +109,6 @@ def get_dashboard_stats(subject: str = None) -> dict:
         "total_students": report["total_students"],
         "subject"       : subject,
     }
-
-
 def export_csv(target_date: date = None,
                subject: str = None) -> str:
     target_date = target_date or date.today()
@@ -163,8 +144,6 @@ def export_csv(target_date: date = None,
     writer.writerow(
         ["Rate", f"{report['attendance_pct']}%"])
     return output.getvalue()
-
-
 def send_daily_report(subject: str = None) -> bool:
     absent = database.get_absent_students(
         date.today(), subject)
