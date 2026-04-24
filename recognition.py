@@ -3,8 +3,12 @@ import time
 import threading
 from collections import deque, Counter
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
+import tensorflow as tf
+tf.config.set_visible_devices([], 'GPU')
+
 import cv2
-import mediapipe as mp
 import numpy as np
 from deepface import DeepFace
 import config
@@ -18,19 +22,47 @@ from utils import (
     CooldownTracker,
 )
 logger = setup_logger(__name__)
-_mp_det  = mp.solutions.face_detection
-_mp_mesh = mp.solutions.face_mesh
-_L_EAR = [362, 385, 387, 263, 373, 380]
-_R_EAR = [33,  160, 158, 133, 153, 144]
-_state_lock    = threading.Lock()
+
+# Load Haar cascade for thread-safe macOS face detection
+_face_cascade = cv2.CascadeClassifier(
+    os.path.join(config.BASE_DIR, "haarcascade_frontalface_default.xml")
+)
+if _face_cascade.empty():
+    import urllib.request
+    url = "https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml"
+    urllib.request.urlretrieve(url, os.path.join(config.BASE_DIR, "haarcascade_frontalface_default.xml"))
+    _face_cascade.load(os.path.join(config.BASE_DIR, "haarcascade_frontalface_default.xml"))
+_state_lock = threading.Lock()
 _recognition_state = {
-    "running"   : False,
-    "present"   : [],   
-    "last_event": "",   
-    "fps"       : 0.0,
-    "faces"     : 0,
-    "subject"   : config.DEFAULT_SUBJECT,
+    "running": False,
+    "subject": "None",
+    "fps"    : 0.0,
+    "faces"  : 0
 }
+_latest_frame = None
+
+def _make_placeholder_frame(text="Waiting for camera..."):
+    import numpy as np
+    frame = np.zeros((480, 640, 3), dtype=np.uint8)
+    cv2.putText(frame, text, (120, 240),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.8,
+                (100, 100, 100), 2)
+    _, buf = cv2.imencode('.jpg', frame)
+    return buf.tobytes()
+
+def get_frame():
+    global _latest_frame
+    placeholder = _make_placeholder_frame()
+    while True:
+        frame_data = _latest_frame
+        if frame_data is not None:
+            yield (b'--frame\r\n'
+                   b'Content-Type: image/jpeg\r\n\r\n' + frame_data + b'\r\n')
+        else:
+            yield (b'--frame\r\n'
+                   b'Content-Type: image/jpeg\r\n\r\n' + placeholder + b'\r\n')
+        time.sleep(0.05)
+
 def get_state() -> dict:
     with _state_lock:
         return dict(_recognition_state)
@@ -156,9 +188,24 @@ class _VoteBuffer:
             return top_sid, avg_conf
         return None
 def run_recognition(subject: str = None):
+    try:
+        _run_recognition_inner(subject)
+    except Exception as e:
+        logger.error("Recognition crashed: %s", e)
+    finally:
+        _shared_frame[0] = None
+        with _state_lock:
+            _recognition_state["running"] = False
+            _recognition_state["fps"]     = 0.0
+            _recognition_state["faces"]   = 0
+        logger.info("Recognition stopped.")
+def _run_recognition_inner(subject: str = None):
     data = load_encodings()
     if not data or not data.get("embeddings"):
         logger.error("No encodings. Run train_model.py first.")
+        if _recognition_state is not None:
+            with _state_lock:
+                _recognition_state["running"] = False
         return
     known_emb   = data["embeddings"]
     known_names = data["names"]
@@ -182,25 +229,26 @@ def run_recognition(subject: str = None):
     frame_n    = 0
     fps        = 0.0
     t_fps      = time.time()
+    read_fails = 0
+    max_read_fails = 30
     logger.info("Recognition started | subject: %s | "
                 "students: %d", active_subj, len(known_emb))
-    with _mp_det.FaceDetection(
-        model_selection=1,
-        min_detection_confidence=0.70
-    ) as detector,    _mp_mesh.FaceMesh(
-        max_num_faces=10,
-        refine_landmarks=True,
-        min_detection_confidence=0.60,
-        min_tracking_confidence=0.60,
-    ) as mesher:
-        while True:
+    while True:
             with _state_lock:
                 if not _recognition_state["running"]:
                     break
                 active_subj = _recognition_state["subject"]
             ret, frame = cap.read()
             if not ret:
-                break
+                read_fails += 1
+                if read_fails >= max_read_fails:
+                    logger.error(
+                        "Camera read failed %d times, "
+                        "stopping.", max_read_fails)
+                    break
+                time.sleep(0.1)
+                continue
+            read_fails = 0
             frame_n += 1
             h, w     = frame.shape[:2]
             display  = frame.copy()
@@ -212,58 +260,39 @@ def run_recognition(subject: str = None):
             if is_before_window():
                 draw_status_bar(
                     display,
-                    f"⏳ Opens at {config.ATTENDANCE_START}",
+                    f"\u23f3 Opens at {config.ATTENDANCE_START}",
                     (0, 180, 255))
-                cv2.imshow("Face Attendance", display)
-                if cv2.waitKey(1000) & 0xFF == ord("q"):
-                    break
+                ret_enc, buffer = cv2.imencode('.jpg', display)
+                if ret_enc:
+                    _latest_frame = buffer.tobytes()
+                time.sleep(0.5)
                 continue
             if not is_attendance_open():
                 draw_status_bar(
                     display,
-                    "🔒 Attendance window closed",
+                    "\ud83d\udd12 Attendance window closed",
                     (0, 0, 220))
-                cv2.imshow("Face Attendance", display)
-                if cv2.waitKey(500) & 0xFF == ord("q"):
-                    break
+                ret_enc, buffer = cv2.imencode('.jpg', display)
+                if ret_enc:
+                    _latest_frame = buffer.tobytes()
+                time.sleep(0.5)
                 continue
             if frame_n % config.FRAME_SKIP == 0:
                 enhanced = equalize_histogram(frame)
-                rgb      = cv2.cvtColor(enhanced,
-                                        cv2.COLOR_BGR2RGB)
-                det_res  = detector.process(rgb)
-                mesh_res = mesher.process(rgb)
+                gray = cv2.cvtColor(enhanced, cv2.COLOR_BGR2GRAY)
+                faces = _face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=4)
                 current = []
-                n_det   = (len(det_res.detections)
-                           if det_res.detections else 0)
+                n_det = len(faces)
                 with _state_lock:
                     _recognition_state["faces"] = n_det
                 for i in range(n_det):
-                    det  = det_res.detections[i]
-                    bb   = det.location_data                              .relative_bounding_box
-                    x1   = max(0, int(bb.xmin * w))
-                    y1   = max(0, int(bb.ymin * h))
-                    x2   = min(w, int(
-                        (bb.xmin + bb.width)  * w))
-                    y2   = min(h, int(
-                        (bb.ymin + bb.height) * h))
+                    x, y, w_face, h_face = faces[i]
+                    x1, y1 = max(0, x), max(0, y)
+                    x2, y2 = min(w, x + w_face), min(h, y + h_face)
                     bbox = (x1, y1, x2, y2)
                     key  = f"face_{i}"
-                    live_ok = not config.LIVENESS_ENABLED
+                    live_ok = True
                     blinks  = 0
-                    if (config.LIVENESS_ENABLED and
-                            mesh_res.multi_face_landmarks and
-                            i < len(
-                                mesh_res.multi_face_landmarks)):
-                        if key not in liveness:
-                            liveness[key] = _LivenessState()
-                        lms  = (mesh_res
-                                .multi_face_landmarks[i]
-                                .landmark)
-                        ear  = _avg_ear(lms, w, h)
-                        st   = liveness[key]
-                        live_ok = st.update(ear)
-                        blinks  = st.blinks
                     crop = frame[y1:y2, x1:x2]
                     if crop.size > 0:
                         texture_ok = _is_real_face(crop)
@@ -318,6 +347,8 @@ def run_recognition(subject: str = None):
                         )
                         if res["success"]:
                             cooldown.mark(sid)
+                            database.enroll_student_subject(
+                                sid, active_subj)
                             with _state_lock:
                                 _recognition_state[
                                     "last_event"] = (
@@ -396,33 +427,33 @@ def run_recognition(subject: str = None):
                         0.52, (0, 0, 200), 2)
             draw_status_bar(
                 display,
-                f"🟢 {active_subj} | "
+                f"\ud83d\udfe2 {active_subj} | "
                 f"{get_time_remaining()} | "
                 f"{len(last_faces)} face(s) | "
                 f"{fps:.0f} fps",
                 (0, 180, 0))
-            cv2.imshow("Face Attendance", display)
-            if cv2.waitKey(1) & 0xFF == ord("q"):
-                with _state_lock:
-                    _recognition_state["running"] = False
-                break
+            
+            ret_enc, buffer = cv2.imencode('.jpg', display)
+            if ret_enc:
+                _latest_frame = buffer.tobytes()
+            
+            time.sleep(0.01)
+                
     cap.release()
-    cv2.destroyAllWindows()
-    with _state_lock:
-        _recognition_state["running"] = False
-    logger.info("Recognition stopped.")
     from datetime import date as date_
     from utils import send_absent_email
-    absent = database.get_absent_students(
-        date_.today(), active_subj)
-    send_absent_email(absent)
 _rec_thread: threading.Thread | None = None
 def start_recognition_thread(subject: str = None):
     global _rec_thread
+    if _rec_thread and _rec_thread.is_alive():
+        logger.info("Waiting for previous recognition "
+                    "thread to finish...")
+        _rec_thread.join(timeout=10)
     with _state_lock:
         if _recognition_state["running"]:
             logger.info("Recognition already running.")
             return
+    time.sleep(1)
     _rec_thread = threading.Thread(
         target=run_recognition,
         args=(subject,),
@@ -431,11 +462,13 @@ def start_recognition_thread(subject: str = None):
     )
     _rec_thread.start()
     logger.info("Recognition thread started.")
+
 def stop_recognition_thread():
     with _state_lock:
         _recognition_state["running"] = False
     if _rec_thread and _rec_thread.is_alive():
-        _rec_thread.join(timeout=5)
+        _rec_thread.join(timeout=10)
     logger.info("Recognition thread stopped.")
+
 if __name__ == "__main__":
     run_recognition()
