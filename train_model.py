@@ -3,6 +3,10 @@ import pickle
 import time
 from pathlib import Path
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
+import tensorflow as tf
+tf.config.set_visible_devices([], 'GPU')
 import cv2
 import numpy as np
 from deepface import DeepFace
