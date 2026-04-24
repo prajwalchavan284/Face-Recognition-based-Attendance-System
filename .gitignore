@@ -28,3 +28,8 @@ tempCodeRunnerFile.py
 # Attendance data (sensitive)
 Attendance.csv
 Absent_Students.csv
+
+# Logs and test scripts
+system.log
+test_cam.py
+test_cascade.py

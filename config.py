@@ -11,7 +11,7 @@ DATABASE_FILE   = BASE_DIR / "attendance.db"
 LOG_FILE        = BASE_DIR / "system.log"
 for directory in [IMAGES_DIR, ENCODINGS_DIR]:
     directory.mkdir(parents=True, exist_ok=True)
-CAMERA_INDEX        = 0       
+CAMERA_INDEX        = int(os.getenv("CAMERA_INDEX", "1"))
 FRAME_WIDTH         = 640
 FRAME_HEIGHT        = 480
 FRAME_SKIP          = 3       
