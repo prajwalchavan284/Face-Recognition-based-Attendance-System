@@ -59,6 +59,21 @@
           {{ history.days_present }} / {{ history.total_days }} days
         </div>
       </div>
+      {% if enrolled_subjects %}
+      <hr/>
+      <div>
+        <div class="fw-600 small text-dark mb-2">
+          <i class="bi bi-book me-1 text-primary"></i>Enrolled Subjects
+        </div>
+        <div class="d-flex flex-wrap gap-1">
+          {% for e in enrolled_subjects %}
+          <span class="badge-present" style="font-size:.72rem">
+            {{ e.subject }}
+          </span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
     </div>
   </div>
   <div class="col-md-8">
@@ -73,6 +88,7 @@
           <thead>
             <tr>
               <th>#</th><th>Date</th>
+              <th>Subject</th>
               <th>Time In</th><th>Confidence</th>
               <th>Status</th>
             </tr>
@@ -82,6 +98,7 @@
             <tr>
               <td class="text-muted">{{ loop.index }}</td>
               <td>{{ r.date }}</td>
+              <td><span class="badge-present" style="font-size:.72rem">{{ r.subject }}</span></td>
               <td>{{ r.time_in }}</td>
               <td>
                 <span class="badge-present">
@@ -95,7 +112,7 @@
             </tr>
             {% else %}
             <tr>
-              <td colspan="5"
+              <td colspan="6"
                   class="text-center text-muted py-4">
                 No attendance records yet.
               </td>

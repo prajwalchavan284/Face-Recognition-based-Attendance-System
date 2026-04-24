@@ -20,15 +20,10 @@
 <div class="table-card p-3 mb-4">
   <div class="d-flex align-items-center gap-3">
     <span class="fw-600">Subject:</span>
-    {% for s in subjects %}
-    <a href="{{ url_for('attendance_view',
-               date_str=target_date) }}?subject={{ s }}"
-       class="btn btn-sm
-         {{ 'btn-primary' if s == report.subject
-            else 'btn-outline-secondary' }}">
-      {{ s }}
-    </a>
-    {% endfor %}
+    <form method="GET" action="{{ url_for('attendance_view', date_str=target_date) }}" class="d-flex gap-2 align-items-center mb-0">
+      <input type="text" name="subject" value="{{ report.subject }}" class="form-control form-control-sm w-auto" placeholder="Subject Name">
+      <button class="btn btn-sm btn-primary">Go</button>
+    </form>
   </div>
 </div>
 <div class="table-card p-4 text-center">

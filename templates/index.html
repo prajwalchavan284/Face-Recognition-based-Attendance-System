@@ -33,40 +33,64 @@
       </h6>
       <small class="text-muted">
         {% if rec.running %}
+          <span class="badge bg-success me-1">AUTO</span>
           Running · Subject: <strong>{{ rec.subject }}</strong>
           · {{ rec.faces }} face(s) · {{ rec.fps }} fps
         {% else %}
-          Stopped — select subject and start
+          <span class="badge bg-secondary me-1">WAITING</span>
+          Recognition starts automatically when the attendance window opens
+          <br><small>Window: <strong>{{ att_start }}</strong> → <strong>{{ att_end }}</strong> · Subject: <strong>{{ att_subject }}</strong></small>
         {% endif %}
       </small>
     </div>
     {% if rec.running %}
-    <form method="POST"
-          action="{{ url_for('stop_recognition') }}">
-      <button class="btn btn-danger btn-sm">
-        <i class="bi bi-stop-circle me-1"></i>Stop
-      </button>
-    </form>
+    <span class="badge bg-success py-2 px-3">
+      <i class="bi bi-broadcast me-1"></i>Live
+    </span>
     {% else %}
-    <form method="POST"
-          action="{{ url_for('start_recognition') }}"
-          class="d-flex gap-2 align-items-center">
-      <select name="subject"
-              class="form-select form-select-sm w-auto">
-        {% for s in subjects %}
-        <option value="{{ s }}"
-          {% if s == stats.subject %}selected{% endif %}>
-          {{ s }}
-        </option>
-        {% endfor %}
-      </select>
-      <button class="btn btn-success btn-sm">
-        <i class="bi bi-play-circle me-1"></i>Start
-      </button>
-    </form>
+    <span class="badge bg-secondary py-2 px-3">
+      <i class="bi bi-clock me-1"></i>Scheduled
+    </span>
     {% endif %}
   </div>
+  <div class="mt-3 text-center" style="background:#000; border-radius:8px; overflow:hidden;">
+    <img src="{{ url_for('video_feed') }}" class="img-fluid" alt="Video Feed" style="max-height: 480px; width: 100%; object-fit: contain;">
+  </div>
 </div>
+
+{% if is_admin %}
+<div class="row g-3 mb-4">
+  <div class="col-12">
+    <div class="table-card p-3">
+      <h6 class="fw-bold mb-3">
+        <i class="bi bi-gear me-2 text-primary"></i>
+        Attendance Configuration
+      </h6>
+      <form method="POST" action="{{ url_for('update_time_window') }}" class="row g-3 align-items-end">
+        <div class="col-auto">
+          <label class="form-label mb-1"><i class="bi bi-clock me-1 text-primary"></i>Start Time</label>
+          <input type="time" name="start_time" class="form-control form-control-sm" step="1" value="{{ att_start[:5] }}" required>
+        </div>
+        <div class="col-auto">
+          <label class="form-label mb-1"><i class="bi bi-clock-history me-1 text-danger"></i>End Time</label>
+          <input type="time" name="end_time" class="form-control form-control-sm" step="1" value="{{ att_end[:5] }}" required>
+        </div>
+        <div class="col-auto">
+          <label class="form-label mb-1"><i class="bi bi-book me-1 text-warning"></i>Subject</label>
+          <input type="text" name="subject" class="form-control form-control-sm" value="{{ att_subject }}" placeholder="Subject Name" required>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-primary btn-sm"><i class="bi bi-save me-1"></i>Save & Schedule</button>
+        </div>
+      </form>
+      <small class="text-muted mt-2 d-block">
+        <i class="bi bi-info-circle me-1"></i>
+        Recognition will automatically start when the window opens and stop when it closes.
+      </small>
+    </div>
+  </div>
+</div>
+{% endif %}
 <div class="row g-3 mb-4">
   <div class="col-sm-6 col-xl-3">
     <div class="stat-card">
