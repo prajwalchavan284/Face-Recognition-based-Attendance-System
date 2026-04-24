@@ -1,9 +1,12 @@
 import os
 import io
 import base64
+import threading
+import time as time_mod
 from datetime import date, datetime, timedelta
 from functools import wraps
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
+os.environ["MEDIAPIPE_DISABLE_GPU"] = "1"
 from flask import (
     Flask, render_template, request, redirect,
     url_for, flash, jsonify, Response,
@@ -12,7 +15,7 @@ from flask import (
 import config
 import database
 import attendance as att
-from utils import setup_logger
+from utils import setup_logger, is_attendance_open
 import recognition as rec_engine
 logger = setup_logger(__name__)
 app = Flask(__name__)
@@ -51,8 +54,10 @@ def inject_globals():
         "app_name"    : "Face Attendance System",
         "current_user": current_user(),
         "is_admin"    : is_admin(),
-        "subjects"    : config.SUBJECTS,
         "rec_state"   : rec_engine.get_state(),
+        "att_start"   : config.ATTENDANCE_START,
+        "att_end"     : config.ATTENDANCE_END,
+        "att_subject" : getattr(config, '_ACTIVE_SUBJECT', config.DEFAULT_SUBJECT),
     }
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -86,19 +91,52 @@ def index():
     rec   = rec_engine.get_state()
     return render_template("index.html",
                            stats=stats, rec=rec)
-@app.route("/recognition/start", methods=["POST"])
+@app.route("/video_feed")
 @login_required
-def start_recognition():
-    subject = request.form.get(
-        "subject", config.DEFAULT_SUBJECT)
-    rec_engine.start_recognition_thread(subject)
-    flash(f"✅ Recognition started for: {subject}", "success")
-    return redirect(url_for("index"))
-@app.route("/recognition/stop", methods=["POST"])
-@login_required
-def stop_recognition():
-    rec_engine.stop_recognition_thread()
-    flash("Recognition stopped.", "info")
+def video_feed():
+    return Response(rec_engine.get_frame(),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
+@app.route("/settings/time_window", methods=["POST"])
+@admin_required
+def update_time_window():
+    start_time = request.form.get("start_time")
+    end_time = request.form.get("end_time")
+    subject = request.form.get("subject", "").strip() or config.DEFAULT_SUBJECT
+    if start_time and end_time:
+        config.ATTENDANCE_START = start_time + ":00" if len(start_time) == 5 else start_time
+        config.ATTENDANCE_END = end_time + ":00" if len(end_time) == 5 else end_time
+        config._ACTIVE_SUBJECT = subject
+        
+        env_path = os.path.join(config.BASE_DIR, ".env")
+        env_lines = []
+        found_start = False
+        found_end = False
+        found_subject = False
+        if os.path.exists(env_path):
+            with open(env_path, "r") as f:
+                for line in f:
+                    if line.startswith("ATTENDANCE_START="):
+                        env_lines.append(f"ATTENDANCE_START={config.ATTENDANCE_START}\n")
+                        found_start = True
+                    elif line.startswith("ATTENDANCE_END="):
+                        env_lines.append(f"ATTENDANCE_END={config.ATTENDANCE_END}\n")
+                        found_end = True
+                    elif line.startswith("ACTIVE_SUBJECT="):
+                        env_lines.append(f"ACTIVE_SUBJECT={subject}\n")
+                        found_subject = True
+                    else:
+                        env_lines.append(line)
+        if not found_start:
+            env_lines.append(f"ATTENDANCE_START={config.ATTENDANCE_START}\n")
+        if not found_end:
+            env_lines.append(f"ATTENDANCE_END={config.ATTENDANCE_END}\n")
+        if not found_subject:
+            env_lines.append(f"ACTIVE_SUBJECT={subject}\n")
+        with open(env_path, "w") as f:
+            f.writelines(env_lines)
+        flash(f"✅ Time window set: {config.ATTENDANCE_START} → {config.ATTENDANCE_END} | Subject: {subject}", "success")
+    else:
+        flash("Invalid time window.", "danger")
     return redirect(url_for("index"))
 @app.route("/students")
 @admin_required
@@ -273,8 +311,11 @@ def student_detail(student_id):
     history = att.get_student_history(student_id)
     if "error" in history:
         abort(404)
+    enrolled_subjects = database.get_subjects_for_student(
+        student_id)
     return render_template(
-        "student_detail.html", history=history)
+        "student_detail.html", history=history,
+        enrolled_subjects=enrolled_subjects)
 @app.route("/profile")
 @login_required
 def profile():
@@ -286,8 +327,10 @@ def profile():
         flash("No student record linked.", "warning")
         return redirect(url_for("index"))
     history = att.get_student_history(sid)
+    enrolled_subjects = database.get_subjects_for_student(sid)
     return render_template(
-        "student_detail.html", history=history)
+        "student_detail.html", history=history,
+        enrolled_subjects=enrolled_subjects)
 @app.route("/export/csv")
 @app.route("/export/csv/<string:date_str>")
 @admin_required
@@ -350,16 +393,59 @@ def not_found(e):
 def server_error(e):
     logger.error("500: %s", e)
     return render_template("500.html"), 500
+
+def _attendance_scheduler():
+    """Background thread that auto-starts/stops recognition
+    based on the configured attendance time window."""
+    logger.info("Attendance scheduler started.")
+    _last_start_attempt = 0
+    _min_start_interval = 15
+    while True:
+        try:
+            state = rec_engine.get_state()
+            window_open = is_attendance_open()
+            subject = getattr(
+                config, '_ACTIVE_SUBJECT',
+                config.DEFAULT_SUBJECT)
+            if window_open and not state["running"]:
+                now = time_mod.time()
+                if (now - _last_start_attempt) >= _min_start_interval:
+                    _last_start_attempt = now
+                    logger.info(
+                        "Auto-starting recognition for: %s",
+                        subject)
+                    rec_engine.start_recognition_thread(subject)
+            elif not window_open and state["running"]:
+                logger.info(
+                    "Auto-stopping recognition "
+                    "(window closed).")
+                rec_engine.stop_recognition_thread()
+        except Exception as e:
+            logger.error("Scheduler error: %s", e)
+        time_mod.sleep(10)
+
 if __name__ == "__main__":
+    config._ACTIVE_SUBJECT = os.getenv(
+        "ACTIVE_SUBJECT", config.DEFAULT_SUBJECT)
+    scheduler_thread = threading.Thread(
+        target=_attendance_scheduler,
+        daemon=True,
+        name="AttendanceScheduler"
+    )
+    scheduler_thread.start()
     print("\n" + "=" * 55)
     print("  FACE ATTENDANCE SYSTEM")
     print(f"  http://127.0.0.1:{config.FLASK_PORT}")
     print(f"  Admin: {config.ADMIN_USERNAME} / "
           f"{config.ADMIN_PASSWORD}")
+    print(f"  Time Window: {config.ATTENDANCE_START}"
+          f" → {config.ATTENDANCE_END}")
+    print("  Recognition auto-starts when window opens")
     print("  Ctrl+C to stop")
     print("=" * 55 + "\n")
     app.run(
         host="0.0.0.0",
         port=config.FLASK_PORT,
         debug=False,
-        use_reloader=False)  
+        use_reloader=False,
+        threaded=True)

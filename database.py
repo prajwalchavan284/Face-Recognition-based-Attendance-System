@@ -109,6 +109,26 @@ class SystemLog(Base):
                 "%Y-%m-%d %H:%M:%S"),
             "notes": self.notes
         }
+class SubjectEnrollment(Base):
+    __tablename__ = "subject_enrollments"
+    id         = Column(Integer, primary_key=True,
+                        autoincrement=True)
+    student_id = Column(String(50), nullable=False)
+    subject    = Column(String(100), nullable=False)
+    enrolled_at = Column(DateTime, default=datetime.now)
+    __table_args__ = (
+        UniqueConstraint("student_id", "subject",
+                         name="uq_student_subject"),
+    )
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "student_id": self.student_id,
+            "subject": self.subject,
+            "enrolled_at": (self.enrolled_at
+                            .strftime("%Y-%m-%d %H:%M:%S")
+                            if self.enrolled_at else None)
+        }
 def init_db():
     Base.metadata.create_all(bind=engine)
     _seed_admin()
@@ -378,5 +398,38 @@ def get_recent_logs(limit: int = 50) -> list:
                 session.query(SystemLog)
                 .order_by(SystemLog.timestamp.desc())
                 .limit(limit).all()]
+    finally:
+        session.close()
+def enroll_student_subject(student_id: str,
+                           subject: str):
+    session = Session()
+    try:
+        existing = session.query(SubjectEnrollment).filter_by(
+            student_id=student_id, subject=subject).first()
+        if not existing:
+            session.add(SubjectEnrollment(
+                student_id=student_id, subject=subject))
+            session.commit()
+    except Exception:
+        session.rollback()
+    finally:
+        session.close()
+def get_subjects_for_student(student_id: str) -> list:
+    session = Session()
+    try:
+        enrollments = session.query(SubjectEnrollment).filter_by(
+            student_id=student_id).order_by(
+            SubjectEnrollment.subject).all()
+        return [e.to_dict() for e in enrollments]
+    finally:
+        session.close()
+def get_all_subjects() -> list:
+    session = Session()
+    try:
+        results = session.query(
+            SubjectEnrollment.subject
+        ).distinct().order_by(
+            SubjectEnrollment.subject).all()
+        return [r[0] for r in results]
     finally:
         session.close()
